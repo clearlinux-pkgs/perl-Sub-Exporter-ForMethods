@@ -1,0 +1,7 @@
+0.100052
+perl(Data::OptList)
+perl(Params::Util)
+perl(Sub::Exporter)
+perl(Sub::Install)
+perl(Sub::Name)
+perl(namespace::autoclean)
