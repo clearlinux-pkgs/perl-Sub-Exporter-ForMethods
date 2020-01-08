@@ -4,13 +4,14 @@
 #
 Name     : perl-Sub-Exporter-ForMethods
 Version  : 0.100052
-Release  : 4
+Release  : 5
 URL      : https://cpan.metacpan.org/authors/id/R/RJ/RJBS/Sub-Exporter-ForMethods-0.100052.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/R/RJ/RJBS/Sub-Exporter-ForMethods-0.100052.tar.gz
-Summary  : helper routines for using Sub::Exporter to build methods
+Summary  : 'helper routines for using Sub::Exporter to build methods'
 Group    : Development/Tools
 License  : Artistic-1.0 Artistic-1.0-Perl GPL-1.0
 Requires: perl-Sub-Exporter-ForMethods-license = %{version}-%{release}
+Requires: perl-Sub-Exporter-ForMethods-perl = %{version}-%{release}
 BuildRequires : buildreq-cpan
 BuildRequires : perl(Data::OptList)
 BuildRequires : perl(Params::Util)
@@ -28,7 +29,6 @@ Summary: dev components for the perl-Sub-Exporter-ForMethods package.
 Group: Development
 Provides: perl-Sub-Exporter-ForMethods-devel = %{version}-%{release}
 Requires: perl-Sub-Exporter-ForMethods = %{version}-%{release}
-Requires: perl-Sub-Exporter-ForMethods = %{version}-%{release}
 
 %description dev
 dev components for the perl-Sub-Exporter-ForMethods package.
@@ -42,8 +42,18 @@ Group: Default
 license components for the perl-Sub-Exporter-ForMethods package.
 
 
+%package perl
+Summary: perl components for the perl-Sub-Exporter-ForMethods package.
+Group: Default
+Requires: perl-Sub-Exporter-ForMethods = %{version}-%{release}
+
+%description perl
+perl components for the perl-Sub-Exporter-ForMethods package.
+
+
 %prep
 %setup -q -n Sub-Exporter-ForMethods-0.100052
+cd %{_builddir}/Sub-Exporter-ForMethods-0.100052
 
 %build
 export http_proxy=http://127.0.0.1:9/
@@ -68,7 +78,7 @@ make TEST_VERBOSE=1 test
 %install
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/perl-Sub-Exporter-ForMethods
-cp LICENSE %{buildroot}/usr/share/package-licenses/perl-Sub-Exporter-ForMethods/LICENSE
+cp %{_builddir}/Sub-Exporter-ForMethods-0.100052/LICENSE %{buildroot}/usr/share/package-licenses/perl-Sub-Exporter-ForMethods/cf95e5660adc2b1a96d7bc21aeb14979f8b21ddf
 if test -f Makefile.PL; then
 make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
 else
@@ -81,7 +91,6 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.2/Sub/Exporter/ForMethods.pm
 
 %files dev
 %defattr(-,root,root,-)
@@ -89,4 +98,8 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/perl-Sub-Exporter-ForMethods/LICENSE
+/usr/share/package-licenses/perl-Sub-Exporter-ForMethods/cf95e5660adc2b1a96d7bc21aeb14979f8b21ddf
+
+%files perl
+%defattr(-,root,root,-)
+/usr/lib/perl5/vendor_perl/5.30.1/Sub/Exporter/ForMethods.pm
