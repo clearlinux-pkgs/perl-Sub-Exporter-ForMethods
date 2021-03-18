@@ -4,7 +4,7 @@
 #
 Name     : perl-Sub-Exporter-ForMethods
 Version  : 0.100052
-Release  : 7
+Release  : 8
 URL      : https://cpan.metacpan.org/authors/id/R/RJ/RJBS/Sub-Exporter-ForMethods-0.100052.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/R/RJ/RJBS/Sub-Exporter-ForMethods-0.100052.tar.gz
 Summary  : 'helper routines for using Sub::Exporter to build methods'
@@ -102,4 +102,4 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.30.3/Sub/Exporter/ForMethods.pm
+/usr/lib/perl5/vendor_perl/5.32.1/Sub/Exporter/ForMethods.pm
