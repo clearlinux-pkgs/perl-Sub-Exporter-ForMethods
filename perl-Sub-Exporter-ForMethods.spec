@@ -4,7 +4,7 @@
 #
 Name     : perl-Sub-Exporter-ForMethods
 Version  : 0.100054
-Release  : 14
+Release  : 15
 URL      : https://cpan.metacpan.org/authors/id/R/RJ/RJBS/Sub-Exporter-ForMethods-0.100054.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/R/RJ/RJBS/Sub-Exporter-ForMethods-0.100054.tar.gz
 Summary  : 'helper routines for using Sub::Exporter to build methods'
